@@ -3,7 +3,7 @@ Overall Structure:
 - [ ] Speech Recognition - make it look like talking to psychologist - WITH CAMERA (pics in rand invls instead of vid?)
 - [ ] Create Chatbot
 - [ ] Pick Questions / Later take a more sophisticated approach
-- [ ] NLP on user's answers - extract mood, schedule etc
+- [x] NLP on user's answers - extract mood --- COULD EXTRACT SCEHDULE?
 - [ ] Decide how to browse spotify's songs
 
 Critical things:
