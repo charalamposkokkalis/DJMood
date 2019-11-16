@@ -16,17 +16,20 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'OxHack19-26166b4bf395.json'
 
 mood_related_response = " ".join(talk_to_user()[0:3])
 
-# Instantiates a client
-client = language.LanguageServiceClient()
+def sentiment_analysis(text):
 
-# The text to analyze
-text = mood_related_response
-document = types.Document(
-    content=text,
-    type=enums.Document.Type.PLAIN_TEXT)
+    # Instantiates a client
+    client = language.LanguageServiceClient()
 
-# Detects the sentiment of the text
-sentiment = client.analyze_sentiment(document=document).document_sentiment
+    # The text to analyze
+    text = mood_related_response
+    document = types.Document(
+        content=text,
+        type=enums.Document.Type.PLAIN_TEXT)
 
-print('Text: {}'.format(text))
-print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
+    # Detects the sentiment of the text
+    sentiment = client.analyze_sentiment(document=document).document_sentiment
+    return [sentiment.score, sentiment.magnitude]
+
+# print('Text: {}'.format(text))
+# print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
