@@ -4,4 +4,6 @@
 
 from chatbot import talk_to_user
 
-print(talk_to_user())fas
+mood_related_response = " ".join(talk_to_user()[0:3])
+
+print(mood_related_response)
