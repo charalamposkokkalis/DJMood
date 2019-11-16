@@ -9,9 +9,23 @@ client_credentials_manager = SpotifyClientCredentials(client_id='d02535ac05c1463
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 #list of Library playlists
+
 lib = [("spotifycharts","37i9dQZEVXbMDoHDwVN2tF")]
+
+# 	danceability: 0.0 to 1.0
+# 	loudness: 0.0 to 1.0
+#	energy: 0.0 to 1.0
+#	instrumentalness: 0.0 to 1.0 confidence it is instrumental
+#	speechiness: 0.0 to 1.0 chance there are vocals
+#	liveness: 0.0 to 1.0 performed live
+#	valence: 0.0 to 1.0 happiness
+# 	tempo: 
+#	acousticness: acoustic
+
+
 features = ["danceability", "energy", "key", "loudness", "mode", "speechiness", 
 					"acousticness", "instrumentalness", "liveness", "valence", "tempo"]
+
 tracks = []
 
 
@@ -21,14 +35,17 @@ def download():
 
 def extractFeat(tr):
 	trackIDs = []
+	feats = []
 	for i,item in enumerate(tr['items']):
 	   track = item['track']
-	   trackIDs.append(track['id']);
-	return sp.audio_features(trackIDs);
-
-
-
+	   #optimize 50
+	   feats.append(sp.audio_features(track['id']))
+	return feats;
 
 
 tracks = download();
-print(extractFeat(download()))
+features = extractFeat(download());
+features = sorted(features, key = lambda i: i[0]['valence'])
+
+for i in range(0,len(features)):
+	print(features[i][0]['id'])
