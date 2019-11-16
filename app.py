@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'GTXS VALE TO ARISTERO LAY UP'   
+    return 'GTXS VALE TO ARISTERO LAY'   
