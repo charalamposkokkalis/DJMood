@@ -1,4 +1,5 @@
-- [ ] Create user interface
+Overall Structure:
+- [ ] Create website
 - [ ] Speech Recognition - make it look like talking to psychologist - WITH CAMERA (pics in rand invls instead of vid?)
 - [ ] Create Chatbot
 - [ ] Pick Questions / Later take a more sophisticated approach
@@ -16,4 +17,3 @@ Critical things:
 Room for improvement
 - [ ] Face emotion recognition
 - [ ] Use past preferences
-- [ ] 
