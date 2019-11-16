@@ -2,9 +2,9 @@
  
 ### Trying Markdown
 
-'''python
+```python
 print("Hello world")
-'''
+```
 
 As the Great Bartzokas said:
 
