@@ -3,17 +3,17 @@
 
 import json
 import pprint
-from fit_function import suit, idealSong
+import fit_function as ff
 
 features = [ "valence", "danceability", "energy", "loudness", "speechiness", 
 					"instrumentalness"]
 
 
 
-def  comp(s1, s2):
+def comp(s1, s2):
 	sumSq = 0
 	for feat in features:
-		sumSq += (s1[feat] - s2[feat])*(s1[feat] - s2[feat]);
+		sumSq += (s1[feat] - s2[feat])*(s1[feat] - s2[feat])
 	sumSq /= len(features)
 
 
@@ -24,7 +24,7 @@ def bestFit(parameters, n):
 
 	data = data[11:]
 	songs = []
-	ideal = idealSong(parameters);
+	ideal = ff.idealSong(parameters)
 
 	for i in range(0,len(data)):
 	    data[i] = data[i][0] # getting rid of the extra arrays
@@ -34,9 +34,10 @@ def bestFit(parameters, n):
 	songs = sorted(songs)
 
 	for i in range(0, len(songs)):
-		songs[i] = songs[i][1];
-	songs = list(set(songs));
+		songs[i] = songs[i][1]
+	songs = list(set(songs))
 
 	top_songs = songs[-n:] # gets 50 songs with highest fitness function
 	return top_songs
 
+test = ff.idealSong([0,0,0,0,0,0])

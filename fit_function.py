@@ -16,14 +16,14 @@
 
 def idealSong(emotion_vector):
     hap, ang, exc, sad, sca, bor = emotion_vector
-    song = {};
+    song = {}
     song['valence'] = (hap - sad)/2 + 0.5
     song['loudness'] = (max(ang, exc) - max(sad,bor))/2 + 0.5
     song['danceability'] = (exc - bor)/2 + 0.5
     song['energy'] = song['loudness']
     song['instrumentalness'] = bor
     song['speechiness'] = 1 - song['instrumentalness']
-    return song;
+    return song
 
 
 def suit(song, emotion_vector):

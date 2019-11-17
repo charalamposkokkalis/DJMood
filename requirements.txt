@@ -5,3 +5,4 @@ SpeechRecognition
 spotipy
 PyAudio
 selenium
+json-sorter

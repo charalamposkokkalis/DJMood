@@ -5,7 +5,10 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 # local imports
 from chatbot import talk_to_user
 from mood_extraction import sentiment_analysis
-import sprec
+# import .sprec
+import fit_function as ff
+import json_sorter as js
+import playlistCreator as plc
 
 # App config.
 # DEBUG = True
@@ -36,7 +39,8 @@ class ReusableForm(Form):
             for emotion in emotions:
                 emotionVec.append(results[emotion])
             print(emotionVec)
-            
+            plc.generateLink(emotionVec)
+
     
         if form.validate():
         # Save the comment here.
