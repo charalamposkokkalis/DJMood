@@ -42,13 +42,13 @@ def download(usr, id):
 	return results['tracks']
 
 def extractFeat(tr = []):
-	trackIDs = []
+	# trackIDs = []
 	feats = []
 	for i,item in enumerate(tr['items']):
 	   track = item['track']
 	   #optimize 50
 	   feats.append(sp.audio_features(track['id']))
-	return feats;
+	return feats
 
 playlists = sp.user_playlists('spotify')
 #print(playlists['items'][1]);
