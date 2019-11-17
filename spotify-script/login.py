@@ -32,3 +32,6 @@ def createPlaylist(username, moods, n):
 def generateLink(moods):
 	playlist_id = createPlaylist(master_user, moods, 20)
 	return "https://open.spotify.com/playlist/" + playlist_id;
+
+
+print(generateLink([1,0,0,0,0,0]));

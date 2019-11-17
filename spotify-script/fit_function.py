@@ -1,5 +1,31 @@
 # This is a fitness function, showing how suitable a song is for the current emotion_vector
 # Better solutions have higher suit value returned
+
+# 	danceability: 0.0 to 1.0
+# 	loudness: 0.0 to 1.0
+#	energy: 0.0 to 1.0
+#	instrumentalness: 0.0 to 1.0 confidence it is instrumental
+#	speechiness: 0.0 to 1.0 chance there are vocals
+#	liveness: 0.0 to 1.0 performed live
+#	valence: 0.0 to 1.0 happiness
+# 	tempo: 
+#	acousticness: acoustic
+
+#  (happy, angry, excited, sad, scared, bored) each in [0,1]
+
+
+def idealSong(emotion_vector):
+    hap, ang, exc, sad, sca, bor = emotion_vector
+    song = {};
+    song['valence'] = (hap - sad)/2 + 0.5
+    song['loudness'] = (max(ang, exc) - max(sad,bor))/2 + 0.5
+    song['danceability'] = (exc - bor)/2 + 0.5
+    song['energy'] = song['loudness']
+    song['instrumentalness'] = bor
+    song['speechiness'] = 1 - song['instrumentalness']
+    return song;
+
+
 def suit(song, emotion_vector):
     happy, angry, excited, sad, scared, bored = emotion_vector
     h1  = happy*(song['loudness'] + song['energy'] + song['speechiness']*0.5 + song['danceability'] + 3*song['valence'] + song['tempo']/150)

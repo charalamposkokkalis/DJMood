@@ -3,7 +3,20 @@
 
 import json
 import pprint
-from fit_function import suit
+from fit_function import suit, idealSong
+
+features = [ "valence", "danceability", "energy", "loudness", "speechiness", 
+					"instrumentalness"]
+
+
+
+def  comp(s1, s2):
+	sumSq = 0
+	for feat in features:
+		sumSq += (s1[feat] - s2[feat])*(s1[feat] - s2[feat]);
+	sumSq /= len(features)
+
+
 
 def bestFit(parameters, n):
 	with open('dataset.txt') as json_file:
@@ -11,12 +24,12 @@ def bestFit(parameters, n):
 
 	data = data[11:]
 	songs = []
-
+	ideal = idealSong(parameters);
 
 	for i in range(0,len(data)):
 	    data[i] = data[i][0] # getting rid of the extra arrays
-	    data[i]['fit'] = suit(data[i],parameters)
-	    songs.append([data[i]['fit'], data[i]['id']])
+	    data[i]['error'] = comp(ideal, data[i])
+	    songs.append([data[i]['error'], data[i]['id']])
 
 
 	songs = sorted(songs)
