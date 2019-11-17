@@ -2,3 +2,4 @@ flask
 wtforms
 paralleldots
 SpeechRecognition
+PyAudio
