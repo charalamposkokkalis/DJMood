@@ -1,5 +1,7 @@
+# This is a fitness function, showing how suitable a song is for the current emotion_vector
 # Better solutions have higher suit value returned
-def suit(song, happy, angry, excited, sad, scared, bored):
+def suit(song, emotion_vector):
+    happy, angry, excited, sad, scared, bored = emotion_vector
     h1  = happy*(song['loudness'] + song['energy'] + song['speechiness']*0.5 + song['danceability'] + 3*song['valence'] + song['tempo']/150)
     e1  = excited*(song['loudness'] + 3*song['energy'] + song['speechiness']/2 + 2*song['danceability'] + song['valence'] + song['tempo']/50 )
     a1  = angry*(-song['loudness']/2 + 2*song['instrumentalness'] + 2*song['valence'] + 200/(song['tempo']+1))

@@ -1,3 +1,5 @@
+# This script logs in to spotify and creates a specific playlist so far - TODO: extend this
+
 import pprint
 import sys
 import spotipy

@@ -1,3 +1,6 @@
+# The goal of this script is to provide us with the opportunity to use Speech Recognition
+# in order to get info from the user
+
 import speech_recognition as sr
 
 

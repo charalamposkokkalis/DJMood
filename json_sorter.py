@@ -1,3 +1,6 @@
+# This script sorts the json data and returns a list of the ids of the top-n songs
+# according to the function suit in fit_function.py
+
 import json
 import pprint
 from fit_function import suit
@@ -9,12 +12,11 @@ data = data[11:]
 songs = []
 
 # these are to be imported (they are the output of sentiment_analysis)
-# TODO - Turn into a vector
 parameters = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
 
 for i in range(0,len(data)):
     data[i] = data[i][0] # getting rid of the extra arrays
-    data[i]['fit'] = suit(data[i],parameters[0],parameters[1],parameters[2],parameters[3],parameters[4],parameters[5])
+    data[i]['fit'] = suit(data[i],parameters)
     songs.append([data[i]['fit'], data[i]['id']])
 
 songs = sorted(songs)

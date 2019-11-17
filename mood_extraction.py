@@ -1,3 +1,5 @@
+# This file carries out the NLP needed to determine the user's emotions
+
 import paralleldots
 from chatbot import talk_to_user
 

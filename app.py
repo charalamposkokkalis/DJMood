@@ -1,3 +1,5 @@
+# This is the main file, which runs our WebApp
+
 from flask import Flask, render_template, request
 from wtforms import Form, StringField, validators
 

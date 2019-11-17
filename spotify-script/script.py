@@ -1,3 +1,6 @@
+# This is the script used to get the json data for the popular playlists - TODO: make sure it works properly
+# so that we don't lose any data.
+
 import spotipy
 import sys
 import json
