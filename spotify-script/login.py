@@ -6,8 +6,8 @@ import spotipy.util as util
 
 client_id = 'd02535ac05c14639beceb6d302177372'
 client_secret = '87b07a1e938f4a76a2c2affe86a47e22'
-redirect_uri = 'oxhack19gre.azurewebsites.net'
-#11171394439
+redirect_uri = 'http://localhost:8080'
+#
 username = "johntyro"
 playlist_id = {};
 track_ids = ["5G8l9egOs7B3sYC6JT7bEL"]
