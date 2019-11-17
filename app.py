@@ -22,9 +22,9 @@ def home():
     if request.method == 'POST' and form.validate():
         r = sentiment_analysis(form.r.data)
 
-        return render_template("home2.html", form=form, s=r)
+        return render_template("first.html", form=form, s=r)
     else:
-        return render_template("home.html", form=form) 
+        return render_template("second.html", form=form) 
     
 app.run(host='0.0.0.0',port=81)
 
