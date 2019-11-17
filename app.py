@@ -50,7 +50,7 @@ class ReusableForm(Form):
         else:
             flash('Error: All the form fields are required. ')
     
-        return render_template('file1.html', form=form, var=link)
+        return render_template('file1.html', form=form)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=81)
