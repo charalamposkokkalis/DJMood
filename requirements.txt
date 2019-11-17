@@ -4,3 +4,4 @@ paralleldots
 SpeechRecognition
 spotipy
 PyAudio
+selenium

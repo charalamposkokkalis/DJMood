@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Page Title</title>
+<title>Reusable Form Demo</title>
+<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -132,29 +135,52 @@ textarea {
     <p>LINK GOES HERE.</p>
     
   </div>
-  <div class="main">
+  <div class="container">
     <h2>Tell us about your day.</h2>
-    <h3>How are you feeling today?</h3>
-    <textarea cols="num" rows="num" id="first"></textarea>
+    <form action="" method="post" role="form">
+      {{ form.csrf }}
+      <div class="form-group">
+      <label for="name">How are you feeling today?</label>
+      <!--<textarea cols="num" rows="num" id="first"></textarea>-->
+      <input type="text" class="form-control" id="name" name="name" placeholder="test?">
 
-    
-    <br>
-    <h3>How has your day been? Anything worth mentioning?</h3>
-    <textarea cols="num" rows="num" id="second"></textarea>
+      
+      <br>
+      <label for="email">How has your day been? Anything worth mentioning?</label>
+      <input type="text" class="form-control" id="email" name="email" placeholder="test2">
 
-    
-    <br>
-    <h3>Do you have something interesting coming up today?</h3>
-    <textarea cols="num" rows="num" id="third"></textarea>
+      <br>
+      <label for="password">Do you have something interesting coming up today?</label>
+      <input type="text" class="form-control" id="password" name="password" placeholder="test3">
 
+    </div>
+    <button type="submit" class="btn btn-success">Give me music!</button>
+  </form>{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  
+  {% for message in messages %}
+  {% if "Error" not in message[1]: %}
+  <div class="alert alert-info">
+  <strong>Success! </strong> { { message[1] }}</div>
+  {% endif %}
+  
+  {% if "Error" in message[1]: %}
+  <div class="alert alert-warning">
+  {{ message[1] }}</div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  
+  </div>
 
-    <br>
+    <!-- <br>
     <h3>Is there anything else you want to share?</h3>
     <textarea cols="num" rows="num" id="fourth"></textarea>
 
     <br>
     <button type="button">Give me some music!</button>
-  </div>
+  </div> -->
   
 </div>
 
@@ -164,3 +190,11 @@ textarea {
 
 </body>
 </html>
+
+
+
+
+
+
+
+
