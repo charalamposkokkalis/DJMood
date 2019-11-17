@@ -131,8 +131,7 @@ textarea {
   <div class="side">
     <h2>Our service.</h2>
     <p>You tell us how you are feeling, we give you the perfect plalylist! Whether you need a morale boost or just some cheerful tunes to dance to, we provide it, easy and simple.</p>
-    <h3>Your playlist</h3>
-    <p>LINK GOES HERE.</p>
+    <h3>{{ var }}</h3>
     
   </div>
   <div class="container">
@@ -142,23 +141,23 @@ textarea {
       <div class="form-group">
       <label for="name">How are you feeling today?</label>
       <!--<textarea cols="num" rows="num" id="first"></textarea>-->
-      <input type="text" class="form-control" id="name" name="name" placeholder="test?">
+      <input type="text" class="form-control" id="name" name="name" placeholder="">
 
       
       <br>
       <label for="email">How has your day been? Anything worth mentioning?</label>
-      <input type="text" class="form-control" id="email" name="email" placeholder="test2">
+      <input type="text" class="form-control" id="email" name="email" placeholder="">
 
       <br>
       <label for="password">Do you have something interesting coming up today?</label>
-      <input type="text" class="form-control" id="password" name="password" placeholder="test3">
+      <input type="text" class="form-control" id="password" name="password" placeholder="">
 
     </div>
     <button type="submit" class="btn btn-success">Give me music!</button>
   </form>{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
+  <!-- {% if messages %}
   
-  {% for message in messages %}
+  {% for message in messages %} -->
   {% if "Error" not in message[1]: %}
   <div class="alert alert-info">
   <strong>Success! </strong> { { message[1] }}</div>

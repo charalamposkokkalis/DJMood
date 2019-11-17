@@ -38,8 +38,9 @@ class ReusableForm(Form):
             emotions = ['Happy', 'Angry', 'Excited', 'Sad', 'Fear', 'Bored']
             for emotion in emotions:
                 emotionVec.append(results[emotion])
-            print(emotionVec)
-            plc.generateLink(emotionVec)
+            # print(emotionVec)
+            link = plc.generateLink(emotionVec)
+            # print(link)
 
     
         if form.validate():
@@ -49,7 +50,7 @@ class ReusableForm(Form):
         else:
             flash('Error: All the form fields are required. ')
     
-        return render_template('file1.html', form=form)
+        return render_template('file1.html', form=form, var=link)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=81)

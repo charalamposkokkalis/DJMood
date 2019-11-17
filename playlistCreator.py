@@ -9,7 +9,7 @@ from json_sorter import bestFit
 client_id = 'd02535ac05c14639beceb6d302177372'
 client_secret = '87b07a1e938f4a76a2c2affe86a47e22'
 redirect_uri = 'http://localhost:8080'
-master_user = "johntyro"
+master_user = "11171394439"
 sp = spotipy.Spotify();
 
 
