@@ -1,0 +1,9 @@
+flask
+wtforms
+paralleldots
+SpeechRecognition
+<<<<<<< HEAD
+spotipy
+=======
+PyAudio
+>>>>>>> speech
