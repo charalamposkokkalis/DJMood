@@ -21,14 +21,14 @@ else:
 	    print ("Can't get token for", master_user)
 
 
-def createPlaylist(username, moods):
+def createPlaylist(username, moods, n):
 
-	track_ids = bestFit(moods)
+	track_ids = bestFit(moods, n)
 	playlist_attr = sp.user_playlist_create(username, "Your current mood", True);
 	playlist_id = playlist_attr ['id']
-	playlist_href = playlist_attr['href']
 	sp.user_playlist_add_tracks(username, playlist_id, track_ids)
-	return playlist_href;
+	return playlist_id;
 
-
-playlist_href = createPlaylist(master_user, [0, 0, 0, 1, 0, 0])
+def generateLink(moods):
+	playlist_id = createPlaylist(master_user, moods, 20)
+	return "https://open.spotify.com/playlist/" + playlist_id;

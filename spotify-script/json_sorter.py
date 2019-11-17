@@ -5,7 +5,7 @@ import json
 import pprint
 from fit_function import suit
 
-def bestFit(parameters):
+def bestFit(parameters, n):
 	with open('dataset.txt') as json_file:
 	    data = json.load(json_file)
 
@@ -21,7 +21,7 @@ def bestFit(parameters):
 
 	songs = sorted(songs)
 
-	top_songs = songs[-50:] # gets 50 songs with highest fitness function
+	top_songs = songs[-n:] # gets 50 songs with highest fitness function
 	top_songs = [tup[1] for tup in top_songs] # keeps just their id
 	return top_songs
 
