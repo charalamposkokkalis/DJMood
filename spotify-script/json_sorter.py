@@ -31,10 +31,12 @@ def bestFit(parameters, n):
 	    data[i]['error'] = comp(ideal, data[i])
 	    songs.append([data[i]['error'], data[i]['id']])
 
-
 	songs = sorted(songs)
 
+	for i in range(0, len(songs)):
+		songs[i] = songs[i][1];
+	songs = list(set(songs));
+
 	top_songs = songs[-n:] # gets 50 songs with highest fitness function
-	top_songs = [tup[1] for tup in top_songs] # keeps just their id
 	return top_songs
 
