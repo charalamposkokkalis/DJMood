@@ -12,13 +12,12 @@ def bestFit(parameters):
 	data = data[11:]
 	songs = []
 
-	# these are to be imported (they are the output of sentiment_analysis)
-	parameters = [1, 1, 0, 0, 0, 0]
 
 	for i in range(0,len(data)):
 	    data[i] = data[i][0] # getting rid of the extra arrays
 	    data[i]['fit'] = suit(data[i],parameters)
 	    songs.append([data[i]['fit'], data[i]['id']])
+
 
 	songs = sorted(songs)
 
