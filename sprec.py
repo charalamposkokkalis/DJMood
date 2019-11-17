@@ -37,7 +37,6 @@ def recognize_speech_from_mic(recognizer, microphone):
     #   update the response object accordingly
     try:
         response["transcription"] = recognizer.recognize_google(audio)
-        print(response["transcription"])
     except sr.RequestError:
         # API was unreachable or unresponsive
         response["success"] = False

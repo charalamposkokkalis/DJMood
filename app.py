@@ -5,6 +5,8 @@ from wtforms import Form, StringField, validators
 # local imports
 # from chatbot import talk_to_user
 from mood_extraction import sentiment_analysis
+import speech_recognition as sr
+from sprec import recognize_speech_from_mic
 
 # Model
 class InputForm(Form):
