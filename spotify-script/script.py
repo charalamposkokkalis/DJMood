@@ -31,7 +31,14 @@ lib = [("spotifycharts","37i9dQZEVXbMDoHDwVN2tF")]
 #	valence: 0.0 to 1.0 happiness
 # 	tempo: 
 #	acousticness: acoustic
+#  (happy, angry, excited, sad, scared, bored) each in [0,1]
 
+#  happy -> loudness, energy, speechiness, danceability, valence (!!)
+#  excited -> loudness, energy(!!), speechiness, danceability(!), valence, tempo
+#  angry -> loudness, instrumentalness(!), valence, tempo (slow)
+#  sad -> energy, instrumentalness (!), liveness (?), valence(!!)
+#  scared -> loudness (low), instrumentalness, valence, tempo (low)
+#  bored -> energy(!!), loudness, speechiness, valence, tempo (high)
 
 features = ["danceability", "energy", "key", "loudness", "mode", "speechiness", 
 					"acousticness", "instrumentalness", "liveness", "valence", "tempo"]
@@ -64,3 +71,4 @@ for playlist in playlists['items']:
 
 with open('features.txt', 'w') as outfile:
     json.dump(features, outfile)
+
