@@ -1,11 +1,11 @@
 # OxfordHack2019
  
-### Trying Markdown
+### Description
 
 ```python
 print("Hello world")
 ```
 
-As the Great Bartzokas said:
 
-> GTXS VALE TO ARISTERO LAYUP
+
+> More To Come
