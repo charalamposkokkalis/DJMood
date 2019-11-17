@@ -1,1 +1,4 @@
 flask
+wtforms
+paralleldots
+SpeechRecognition
