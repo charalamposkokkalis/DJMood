@@ -6,8 +6,6 @@ from wtforms import Form, StringField, validators
 # local imports
 from chatbot import talk_to_user
 from mood_extraction import sentiment_analysis
-import speech_recognition as sr
-from sprec import recognize_speech_from_mic
 
 # Model
 class InputForm(Form):
@@ -21,8 +19,8 @@ def home():
     form = InputForm(request.form)
     if request.method == 'POST' and form.validate():
         r = sentiment_analysis(form.r.data)
-        return render_template("first.html", form=form, s=r)
+        return render_template("file1.html", form=form)
     else:
-        return render_template("second.html", form=form) 
+        return render_template("file1.html", form=form) 
     
-# app.run(host='0.0.0.0',port=81)
+app.run(host='0.0.0.0',port=81)
