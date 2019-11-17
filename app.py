@@ -41,16 +41,11 @@ class ReusableForm(Form):
             # print(emotionVec)
             link = plc.generateLink(emotionVec)
             # print(link)
-
-    
-        if form.validate():
-        # Save the comment here.
-            
-            flash('Thanks for registration ' + name)
+            return render_template('file1.html', form=form, var=link)
         else:
-            flash('Error: All the form fields are required. ')
+            return render_template('file1.html', form=form)
     
-        return render_template('file1.html', form=form)
+        
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=81)
