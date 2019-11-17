@@ -31,6 +31,6 @@
         "venv.bak{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/16faecff-b555-4936-a328-6904c8dadc39/resourceGroups/OxHack19gre/providers/Microsoft.Web/sites/OxHack19gre",
-    "appService.deploySubpath": ""
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/16faecff-b555-4936-a328-6904c8dadc39/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/moodtest"
 }
